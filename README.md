@@ -16,26 +16,30 @@ Java.perform(function() {
 # Call methods on existing clases:
 ``` 
 Java.perform(function () {
-	Java.choose("com.microsoft.class", { 
-		"onMatch":function(instance){
-				//inst.method();
-				console.log("[*] Instance found, result: ", instance);
-			
-		},
-		"onComplete":function() {
-			console.log("[*] Finished heap search")
-		}
-	});
+        Java.choose("com.some.app.class", {
+                "onMatch":function(instance){
+
+
+
+                                console.log("[*] Instance found, result: ", instance);
+
+                },
+                "onComplete":function() {
+                        console.log("[*] Finished heap search")
+                }
+        });
 });
+
 ```
 # Override method calls:
 ```
 Java.perform(function () {
-	const cls = Java.use("com.microsoft.class");
-	cls.method.implementation = function() {
-        return;
-    }
+        const cls = Java.use("com.some.app.class");
+        cls.someMethod.implementation = function() {
+                return;
+        }
 });
+
 
 ```
 
