@@ -32,7 +32,7 @@ Java.perform(function () {
 ```
 Java.perform(function () {
 	const cls = Java.use("com.microsoft.class");
-	cls.checkServerTrusted.implementation = function() {
+	cls.method.implementation = function() {
         return;
     }
 });
